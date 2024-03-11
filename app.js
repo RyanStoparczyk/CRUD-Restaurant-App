@@ -15,10 +15,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //set the view engine
 app.set('view engine', 'pug');
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, 'src/views/pages'));
 
 //set up the routers
-const restRoute = require('./routers/Restaurants');
+const restRoute = require('./src/routers/Restaurants');
 app.use('/restaurants', restRoute);
 
 /*
@@ -39,7 +39,7 @@ app.get('/addrestaurant', (req, res, next) => {
   res.render('add-restaurant.pug');
 });
 
-const server = app.listen(PORT, () => {
+const server = app.listen(process.env.PORT||PORT, () => {
   console.log(`Server listening at http://localhost:${PORT}`);
 });
 

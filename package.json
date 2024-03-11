@@ -2,10 +2,10 @@
   "name": "a3",
   "version": "1.3.0",
   "description": "An app to show my skill with webpages handling CRUD operations. Uses axios, pug, and express.",
-  "main": "server.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js -e pug,css,js,json",
+    "start": "nodemon app.js -e pug,css,js,json",
     "format": "npx prettier . --write -c"
   },
   "keywords": [

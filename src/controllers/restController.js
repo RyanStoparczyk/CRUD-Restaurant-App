@@ -171,12 +171,12 @@ function idChecker(id) {
 }
 
 //Initializing the restaurant cache
-fs.readdir('./restaurants', (err, files) => {
+fs.readdir('./data', (err, files) => {
   if (err) return console.log(err); //Throws ERR if no file directory exists
   let restaurant;
   for (let i = 0; i < files.length; i++) {
     if (files[i].endsWith('.json')) {
-      restaurant = require('../restaurants/' + files[i]);
+      restaurant = require('../../data/' + files[i]);
       restaurant_cache[restaurant.id] = restaurant;
     }
   }

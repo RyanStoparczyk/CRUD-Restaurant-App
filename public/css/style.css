@@ -1,0 +1,48 @@
+.column > div {
+  width: 33.33%;
+  display: block;
+}
+.row:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+li::marker {
+  text-align: center;
+}
+.button > input {
+  border: none;
+  background: none;
+  padding: 0;
+  font-size: medium;
+  margin-top: 2px;
+  display: inline-block;
+  color: red;
+}
+body {
+  background-color: rgb(238, 208, 170);
+  font-family: monospace;
+  text-align: center;
+}
+h2 {
+  text-align: center;
+  font-size: 1.3em;
+}
+h1 {
+  color: rgb(155, 11, 11);
+  text-align: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+a {
+  color: black;
+  font-size: large;
+}
+.select > input {
+  border-color: sienna;
+  border-width: 3px;
+  background-color: transparent;
+  margin-top: 10px;
+}
+.textbox > input {
+  margin-bottom: 10px;
+}

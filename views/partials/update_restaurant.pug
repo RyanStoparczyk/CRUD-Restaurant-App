@@ -1,0 +1,32 @@
+h3 Update Restaurant Info: 
+p Modify Name: 
+  input(type='textbox' class="resetme" id='name' placeholder='Enter a new name...')
+p Modify Delivery Fee: 
+  input(type='textbox' class="resetme" id='delivery_fee' placeholder='Please enter a number...')
+p Modify Minimum Order: 
+  input(type='textbox' class="resetme" id='min_order' placeholder='Please enter a number...')
+input(type='button' value='Update' onclick='modRestInfo()')
+br
+h3 New Category: 
+input(type='textbox' class="resetme" id='category' placeholder='Enter a new category...')
+input(type='button' value='Add Category' onclick="addCategoryHandler()")
+br
+br
+h3 New Menu Item Constructor:  
+form
+  label(for="categories_select") Select a category for the item: 
+  select(id="categories_select" name="categories_select")
+    if menu_length != 0
+      each category in categories
+        option(value=`${category}`) #{category} 
+input(type='textbox' class="resetme" id='menu_item' placeholder='Food Item...')
+br
+input(type='textbox' class="resetme" id='menu_item_description' placeholder='Enter a description...')
+br
+input(type='textbox' class="resetme" id='menu_item_price' placeholder='Please enter a number...')
+br
+input(type='button' value='Add Item' onclick="addItemHandler()")
+br
+input(type='button' onclick="updateHandler()" value="Save Changes")
+br
+input(type='button' onclick="deleteHandler()" value="Close restaurant for good.")

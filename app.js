@@ -32,7 +32,7 @@ app.get('/addrestaurant', (req, res, next) => {
   res.render('add-restaurant.pug');
 });
 
-mongoose.connect('mongodb://localhost/restaurants');
+mongoose.connect('mongodb+srv://databaseryan:AVF3X6SWFwrzrlFc@menumaker.wezyc0h.mongodb.net/restaurants');
 let db = mongoose.connection;
 
 db.on('error', console.error.bind(console,'connection error:'));

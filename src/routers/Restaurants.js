@@ -3,11 +3,15 @@ const express = require('express');
 const restController = require('../controllers/restController');
 const router = express.Router();
 
-router.get('/', restController.getRest);
-router.post('/', restController.postRest);
+router.get('/', restController.queryParser);
+router.get('/', restController.loadRestaurants);
+router.get('/', restController.respondRestaurants);
 
-router.get('/:restID', restController.getRestID);
-router.put('/:restID', restController.putRestID);
-router.delete('/:restID', restController.delRestID);
+router.post('/', restController.createRestaurant);
+
+router.param('restID', restController.loadSingleRestaurant);
+router.get('/:restID', restController.sendSingleRestaurant);
+router.put('/:restID', restController.modifyRestaurant);
+router.delete('/:restID', restController.deleteRestaurant);
 
 module.exports = router;

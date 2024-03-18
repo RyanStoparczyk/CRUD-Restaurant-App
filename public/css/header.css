@@ -1,0 +1,64 @@
+#header {
+  height: clamp(0rem, 4vh, 500rem);
+  width: 100%;
+  margin:0px;
+
+  display: inline-block;
+  text-align: center;
+
+  overflow: hidden;
+}
+
+#header-background-pattern {
+  height: clamp(0rem, 8vh, 500rem);
+  width: 100vw;
+
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.1) 9%,
+    transparent 9%
+  );
+  background-position: 0% 0%;
+  background-size: 8vmin 8vmin;
+  position: absolute;
+  left: 0px;
+  top: -2vh;
+  z-index: 1;
+
+  transition: background-size 800ms ease,
+    background-position 800ms ease;
+}
+
+#header-items {
+  position:relative;
+  z-index: 2;
+}
+
+#header-items:hover > .header-item {
+  opacity:0.3;
+}
+
+#header-items:hover > .header-item:hover {
+  opacity: 1;
+}
+
+.header-item {
+  color:#FFDEAD;
+  font-size: clamp(4px, 4vh, 60px);
+  font-family: "Ibarra Real Nova", serif;
+  text-decoration: none;
+  transition: opacity 400ms ease;
+
+  margin-inline: 2vw;
+}
+
+#header-items:hover > #title {
+  opacity: 1;
+}
+
+#header > #header-background-pattern {
+  background-position: calc(5% * (-1*(var(--active-index, 0)) + 1)) center;
+}
+
+#header > #header-background-pattern {
+  background-position: calc(-45% + 8% * (-1*(var(--active-index, 0)))) 0%;
+}

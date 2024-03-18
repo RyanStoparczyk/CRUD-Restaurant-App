@@ -12,10 +12,7 @@ How to access:
 
 Purpose: To create a CRUD program, working with node.js on the backend.
  - Languages used: JavaScript, CSS, HTML (view engine: pug)
- - Modules used: axiom, express, pug
+ - Modules used: axiom, express, pug, mongoose
  - dev modules used: nodemon, prettier 
-
-Note: The restaurants are saved as JSON files, rather than as a db
-in the current build. These restaurant objects reset with each server reboot.
 
 Thank you!

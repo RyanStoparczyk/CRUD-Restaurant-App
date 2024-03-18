@@ -1,0 +1,75 @@
+#restaurant-info{
+  text-align: center;
+  width:100%;
+  background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0, 0, 0, 0.75)),
+    url('https://source.unsplash.com/collection/552014/${100vw}x${16vh}?${Math.random()}');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.column {
+  width: 33%;
+  float: left;
+}
+.row {
+  overflow: auto;
+}
+.row:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+li::marker {
+  text-align: center;
+}
+body {
+  height: 100%;
+  background-color: rgb(20,20,20);
+  margin: 0px;
+  color:#E9DCC9;
+  text-align: center;
+  font-family: "Ibarra Real Nova", serif;
+}
+h1 {
+  font-size: clamp(2rem, 8vw, 10rem);
+  margin-block-start: 0;
+  margin-block-end: 0;
+  color: #FFDEAD;
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: .4vw;
+}
+a { 
+  color:#FFDEAD;
+  text-decoration: none;
+  font-size: clamp(4px, 3vw, 22px);
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+}
+input {
+  border-width: 2px;
+  border-color: sienna;
+  margin-bottom:5px;
+  margin-right:2px;
+  background-color: transparent;
+  color: #E9DCC9;
+}
+form {
+  margin-block-end:5px;
+  background-color: transparent;
+}
+select {
+  appearance: none;
+  background-color: transparent;
+  padding-inline: 5px;
+  border-color: sienna;
+  border-width: 2px;
+  color: #E9DCC9;
+  cursor:inherit;
+  outline:none;
+}
+p {
+  margin: 0;
+}
+#category_links{
+  margin-block: 1em;
+}

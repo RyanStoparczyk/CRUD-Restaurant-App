@@ -1,5 +1,17 @@
+doctype html
 html(lang=en)
   title Restaurant List 
+  link(rel='stylesheet' href='/css/restaurants-list.css' type='text/css')
 body 
   include ../partials/header
-  include ../partials/restaurant_list
+  #maincontent
+    h2 List of Restaurants:
+    br
+    #restaurants-list
+      #restaurant-items
+        each restaurant in restaurant_cache
+          a(href=`/restaurants/${restaurant._id}`).restaurant-item #{restaurant.name}  
+          br
+      #restaurant-background-image
+  script(type="text/javascript" src="/js/restaurants-list.js")
+  script(type="text/javascript" src="/js/header.js")

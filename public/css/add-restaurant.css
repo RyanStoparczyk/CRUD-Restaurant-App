@@ -1,0 +1,22 @@
+body {
+  height: 100%;
+  background-color: rgb(20,20,20);
+  margin: 0px;
+  font-family: "Ibarra Real Nova", serif;
+  color: #E9DCC9;
+
+}
+#maincontent {
+  margin: clamp(1rem,5vw,3rem) 2rem;
+}
+h1 {
+  color:#FFDEAD;  
+}
+input {
+  border-width: 2px;
+  border-color: sienna;
+  margin-bottom:5px;
+  margin-right:2px;
+  background-color: transparent;
+  color: #E9DCC9;
+}

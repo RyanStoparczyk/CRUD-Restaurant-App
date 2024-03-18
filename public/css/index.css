@@ -1,0 +1,89 @@
+body{
+  height: 100%;
+  background-color: rgb(20,20,20);
+  margin: 0px;
+}
+
+#menu {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+#menu-items{
+  margin-left: clamp(4rem,20vw,48rem);
+}
+
+#menu-items:hover > .menu-item {
+  opacity:0.3;
+}
+
+#menu-items:hover > .menu-item:hover {
+  opacity: 1;
+}
+
+.menu-item {
+  color:#E9DCC9;
+  font-size: clamp(3rem, 8vw, 8rem);
+  font-family: "Ibarra Real Nova", serif;
+
+  display: block;
+  text-decoration: none;
+  padding: clamp(0.25rem,0.5vw,1rem) 0rem;
+  transition: opacity 400ms ease;
+}
+
+#menu-items:hover > #title {
+  opacity: 1;
+}
+
+#title {
+  font-size: clamp(4rem, 15vw, 10rem);
+  margin-block-start: 0;
+  margin-block-end: 0;
+  color: #FFDEAD;
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: .4vw;
+  
+}
+
+#menu-background-image {
+  height: 100%;
+  width: 100%;
+
+  background-image: url('https://images.unsplash.com/photo-1568031813264-d394c5d474b9?auto=format&fit=crop');
+  
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: -1;
+
+  background-position: center 40%;
+  background-size: 175vmax;
+  background-repeat: no-repeat;
+  opacity: 0.15;
+
+  transition: opacity 800ms ease,
+    background-size 800ms ease,
+    background-position 800ms ease,
+    blur 800ms ease;
+}
+
+#menu-items:hover ~ #menu-background-image {
+  background-size: 160vmax;
+  opacity: 0.10;
+  filter: blur(4px)
+}
+
+#menu[data-active-index="0"] > #menu-background-image {
+  background-position: center 42%;
+}
+
+#menu[data-active-index="1"] > #menu-background-image {
+  background-position: center 50%;
+}
+
+#menu[data-active-index="2"] > #menu-background-image {
+  background-position: center 58%;
+}

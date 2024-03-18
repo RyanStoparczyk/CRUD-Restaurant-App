@@ -1,0 +1,47 @@
+Server-side:
+
+get '/' 
+-HTML data: Must contain the headers mentioned above.
+-Should also contain a welcome message.
+
+get '/restaurants' 
+-HTML & JSON
+-HTML data: Responds with a page that contains a list of all restaurants on the server.
+	-Each name will link to that :restID
+-JSON data: Responds with an object {"restaurants" : [id0, id1, idn]}
+
+get '/addrestaurant'
+-Provides page to make below put request to /restaurants
+-Must be able to adjust the name, the delivery fee, and the minimum order for the restaurant
+-Post req will be sent through an xhttp req on client-side.
+-After receiving a '200' status, the client will be redirected to the new restaurant page.
+
+post '/restaurants'
+-Accepts a JSON object, {"name": restaurantName, "delivery_fee": deliveryFee, "min_order": minOrder}
+-Must verify that the correct fields exist in the body. 
+-Response body will contain the new JSON representation of this restaurant with a blank menu and a unique id.
+
+get '/restaurants/:restID'
+-If accept 'app/JSON', then stringify the restaurant object and send back
+-Else, respond with HTML that supports the following:
+	-name, fee & min_order
+	-Menu, divided into the correct categories, showing the:
+		-id, name, desc, and price of each item
+	-The user must be able to modift the name, delivery fee, and min order of the restaurant. You can place 	this information in text fields.
+	-The ability to create a new, unique category. This will be saved locally, until a save button is pressed 	to send this to the server. 
+	-The ability to create a new food item.
+		-Choose a name, desc, price and category (from a drop-down list)
+		-Also saved locally until a save button is pressed.
+	-A save button must be provided. It will send a put request to the server. It will update the information 	stored for the restaurant, and respond with a 200 status. 
+		-Then, it will alert the user that the update was successful.
+
+put '/restaurants/:restID
+-Will accept a JSON body
+-Will update the restaurant with the unique id of the parameter. 
+	-Will send a '200' status, with a blank response to confirm the changes were successful. 
+-If the provided :restID is invalid, send a 404 response.
+
+delete '/restaurants/:restID
+-Will delete the restaurant with the unique id of the parameter, if it exists.
+-Returns status of 404 if the restaurant was not found
+-Returns status of 200 if the restaurant was successfully deleted.

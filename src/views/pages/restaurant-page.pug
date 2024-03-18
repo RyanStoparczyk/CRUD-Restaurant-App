@@ -1,15 +1,18 @@
+doctype html
 html(lang='en')
   head 
     title #{restaurant.name}
     script(src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js")
-    script(type="text/javascript" src="/js/restaurant_page.js")
-  body(id='maincontent' onload=`init(${restaurant.id})`)
+  body(id='maincontent' onload=`init()`)
     include ../partials/header
-    #restaurant_info
+    #restaurant-info
       include ../partials/restaurant_info
-    - var menu_length = Object.keys(restaurant.menu).length
     #menu.row 
       include ../partials/menu_constructor.pug
       #update_content(style="text-align:right;").column
         include ../partials/update_restaurant.pug
-    
+    script(type="text/javascript" src="/js/header.js")
+    script(src="/js/restaurant_page.js")
+    script(src="/js/helpers/dom_refresher.js")
+    script(src="/js/helpers/dom_reader.js")
+    link(rel="stylesheet" href="/css/restaurant-page.css" type="text/css")

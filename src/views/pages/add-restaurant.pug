@@ -1,18 +1,20 @@
+doctype html
 html(lang="en")
   head 
     title Restaurant Creator
-    script(src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js")
-    script(type="text/javascript" src="/js/add_restaurant.js")
   body 
     include ../partials/header
-   
-    h1 Build a Restaurant! 
-    form#submit
-      p Enter a name for the restaurant: 
-        input(type="textbox" id="name") 
-      p Enter a delivery fee for the restaurant: 
-        input(type="textbox" id="delivery_fee")  
-      p Enter the minimum amount to order for the restaurant: 
-        input(type="textbox" id="min_order") 
-    input(type="button" value ="Submit" onclick="submit()")
-    
+    div#maincontent
+      h1 Build a Restaurant! 
+      form#submit
+        p Enter a name for the restaurant: 
+          input(type="textbox" id="name") 
+        p Enter a delivery fee for the restaurant: 
+          input(type="textbox" id="delivery_fee")  
+        p Enter the minimum amount to order for the restaurant: 
+          input(type="textbox" id="min_order") 
+      input(type="button" value ="Submit" onclick="submit()")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js")
+    script(type="text/javascript" src="/js/add_restaurant.js")
+    script(type="text/javascript" src="/js/header.js")
+    link(rel='stylesheet' href='/css/add-restaurant.css' type='text/css')

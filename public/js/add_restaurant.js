@@ -28,7 +28,7 @@ async function postAddRestaurant(restaurant) {
     console.log(res.status + ': Success!');
     console.log(res.data);
     console.log(`Navigating to newly built page for Restaurant ${res.data.name}`);
-    window.location.replace(`http://localhost:3000/restaurants/${res.data.id}`);
+    window.location.replace(`http://localhost:3000/restaurants/${res.data._id}`);
   } catch (err) {
     console.log(err);
     alert(

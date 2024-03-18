@@ -1,8 +1,16 @@
+doctype html 
 html(lang='en')
   head 
-    title COMP A3 
-    script(type="module" src="/js/restaurant_page.js")
-  body#maincontent
-    include ../partials/header
-
-    h3 Welcome to our Restaurant Service Home Page!
+    title MenuMaker 
+    link(rel='stylesheet' href='/css/index.css' type='text/css')
+    link(href="https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet")
+  body
+    #menu
+      #menu-items
+        h1.menu-item#title MenuMaker
+        | 
+        a(href="/restaurants").menu-item Restaurants
+        | 
+        a(href="/addrestaurant").menu-item Create a Menu
+      #menu-background-image
+    script(type="text/javascript" src="/js/index.js")

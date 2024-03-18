@@ -7,9 +7,12 @@
 //establish apps
 const path = require('path');
 const express = require('express');
+const mongoose = require('mongoose');
 let app = express();
-const PORT = 3000;
+const port = process.env.PORT || 3000;
 const pug = require('pug');
+
+//set up paths
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -21,31 +24,24 @@ app.set('views', path.join(__dirname, 'src/views/pages'));
 const restRoute = require('./src/routers/Restaurants');
 app.use('/restaurants', restRoute);
 
-/*
-  Get '/'
-  Content Type: HTML
-  Response: HTML homepage.
-*/
-app.get('/', (req, res, next) => {
-  res.render('index.pug');
+app.get('/', (req, res, next) => { 
+  res.render('index.pug') 
 });
 
-/* 
-  /addrestaurant GET Request
-  Content Type: HTML
-  Response: HTML page with a form to submit a POST request to /restaurants
-*/
 app.get('/addrestaurant', (req, res, next) => {
   res.render('add-restaurant.pug');
 });
 
-const server = app.listen(process.env.PORT||PORT, () => {
-  console.log(`Server listening at http://localhost:${PORT}`);
-});
+mongoose.connect('mongodb://localhost/restaurants');
+let db = mongoose.connection;
 
-process.on('SIGINT', () => {
-  debug('SIGINT signal received: closing HTTP server');
-  server.close(() => {
-    debug('HTTP server closed');
+db.on('error', console.error.bind(console,'connection error:'));
+db.once('open', function(){ 
+  console.log('Connected to restaurants database.');
+
+  app.listen(port, () => {
+    console.log(`Server listening at http://localhost:${port}`);
   });
 });
+
+

@@ -1,26 +1,19 @@
-
-- var categories = Object.keys(restaurant.menu)
 #category_links.column 
   if menu_length != 0
-    each category in categories 
-      a(href=`#${category.replace(' ', '_')}`)
-        strong #{category}
+    each category in restaurant.menu 
+      a(href=`#${category.category.replace(' ', '_')}`)
+        strong #{category.category}
       br 
       br
 #itemized_menu.column
   if menu_length != 0
-    each category in categories
-      div(id=`${category.replace(' ', '_')}`)
-        h3 #{category}
-        - var food_item_ids = Object.keys(restaurant.menu[category])  
-        -var counter = 0;
-        each food_item in restaurant.menu[category]
-          p ID: #{food_item_ids[counter]}
-          | 
+    each category in restaurant.menu
+      div(id=`${category.category.replace(' ', '_')}`)
+        h3 #{category.category}
+        each food_item in category.items
           p #{food_item.name}
           | 
-          p #{food_item.description}
+          p.item-description #{food_item.description}
           | 
           p $#{Number(food_item.price).toFixed(2)}
-          - counter++
           br

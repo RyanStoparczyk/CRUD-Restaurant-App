@@ -1,0 +1,68 @@
+body {
+  height: 100%;
+  background-color: rgb(20,20,20);
+  margin: 0px;
+}
+#maincontent {
+  margin: clamp(1rem,5vw,3rem) 2rem;
+}
+h2 {
+  font-size: clamp(2rem, 5vw, 5rem);
+  font-family: "Ibarra Real Nova", serif;
+  color:#FFDEAD;  
+  margin-block: 0;
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: .4vw;
+}
+#restaurants-list {
+  font-size: clamp(1rem, 2vw, 3rem);
+  font-family: "Ibarra Real Nova", serif;
+  
+  display: flex;
+  align-items: center;
+}
+.restaurant-item {
+  transition: opacity 400ms ease;
+  text-decoration: none;
+  color:#E9DCC9;
+  transition: opacity 400ms ease;
+}
+#restaurant-items:hover > .restaurant-item {
+  opacity:0.3;
+}
+#restaurant-items:hover > .restaurant-item:hover {
+  opacity: 1;
+}
+#restaurant-background-image {
+  height: clamp(0rem, 96vh, 500rem);
+  width: 100%;
+
+  background-image: url('https://images.unsplash.com/photo-1588416820614-f8d6ac6cea56?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  
+  position:absolute;
+  left:0px;
+  top:4vh;
+  z-index: -1;
+
+  background-position: center 40%;
+  background-size: 175vmax;
+  background-repeat: no-repeat;
+  opacity: 0.15;
+
+  transition: opacity 800ms ease,
+    background-size 800ms ease,
+    background-position 800ms ease,
+    blur 800ms ease;
+}
+#restaurant-items:hover ~ #restaurant-background-image {
+  background-size: 200vmax;
+  opacity: 0.10;
+  filter: blur(4px)
+}
+#restaurants-list > #restaurant-background-image {
+  background-position: 0% calc(-25% * (var(--active-index, 0) + 1));
+}
+#restaurants-list > #restaurant-background-image {
+  background-position: center calc(45% + 5% * var(--active-index, 0));
+}
